@@ -1,6 +1,6 @@
 # AWS Cloud - Infraestructura como Código (Terraform)
 
-Este proyecto despliega mi currículum profesional en la nube de AWS utilizando un bucket de S3 configurado para hosting estático.
+Este mini proyecto despliega mi currículum profesional en la nube de AWS utilizando un bucket de S3 configurado para hosting estático.
 Todo el proceso ha sido automatizado mediante Terraform.
 
 ## 🚀 Arquitectura
