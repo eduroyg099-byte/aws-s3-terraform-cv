@@ -8,3 +8,4 @@ variable "bucket_name" {
   description = "Nombre único global para el bucket de S3"
   type        = string
 }
+

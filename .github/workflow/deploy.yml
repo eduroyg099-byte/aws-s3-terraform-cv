@@ -1,0 +1,31 @@
+name: 'Terraform CD'
+
+on:
+  push:
+    branches:
+      - main  # Se activa cada vez que subes algo a la rama main
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v3
+
+    - name: Configurar Terraform
+      uses: hashicorp/setup-terraform@v2
+
+    - name: Configurar credenciales de AWS
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AKIA2LX2N7V7SCTZNC7C }}
+        aws-secret-access-key: ${{ secrets.zSF5v4qAbgAKJZmOqN1AsVyOGwqGzQBnFaJ+dAff }}
+        aws-region: us-east-1 # O la región que estés usando
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Apply
+      run: terraform apply -auto-approve
