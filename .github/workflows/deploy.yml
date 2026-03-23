@@ -17,13 +17,15 @@ jobs:
     - name: Configurar Terraform
       uses: hashicorp/setup-terraform@v2
 
-    - name: Configurar credenciales de AWS
+    - name: '3. Configurar credenciales de AWS'
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AKIA2LX2N7V7SCTZNC7C }}
-        aws-secret-access-key: ${{ secrets.zSF5v4qAbgAKJZmOqN1AsVyOGwqGzQBnFaJ+dAff }}
-        aws-region: us-east-1 # O la región que estés usando
-
+        # Aquí NO pongas tu clave, deja el texto tal cual está abajo
+        # GitHub buscará el valor real en la pestaña "Secrets" que configuramos
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+    
     - name: Terraform Init
       run: terraform init
 
